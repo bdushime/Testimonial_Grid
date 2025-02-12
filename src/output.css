@@ -713,6 +713,54 @@
   .box-content {
     box-sizing: content-box;
   }
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .line-clamp-4 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .line-clamp-5 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+  .line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+  .line-clamp-\[33\] {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 33;
+  }
+  .line-clamp-\[var\(--line-clamp-variable\)\] {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--line-clamp-variable);
+  }
   .line-clamp-none {
     overflow: visible;
     display: block;
@@ -1076,6 +1124,9 @@
   .auto-rows-min {
     grid-auto-rows: min-content;
   }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
   .grid-cols-none {
     grid-template-columns: none;
   }
@@ -1232,6 +1283,9 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
@@ -1323,6 +1377,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .overflow-visible {
+    overflow: visible;
   }
   .scroll-auto {
     scroll-behavior: auto;
@@ -2263,12 +2320,50 @@
       right: calc(var(--spacing) * 24);
     }
   }
+  .md\:col-span-2 {
+    @media (width >= 48rem) {
+      grid-column: span 2 / span 2;
+    }
+  }
+  .md\:row-span-2 {
+    @media (width >= 48rem) {
+      grid-row: span 2 / span 2;
+    }
+  }
+  .md\:line-clamp-none {
+    @media (width >= 48rem) {
+      overflow: visible;
+      display: block;
+      -webkit-box-orient: horizontal;
+      -webkit-line-clamp: unset;
+    }
+  }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
+    }
+  }
   .md\:scale-150 {
     @media (width >= 48rem) {
       --tw-scale-x: 150%;
       --tw-scale-y: 150%;
       --tw-scale-z: 150%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .md\:grid-cols-4 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .md\:grid-rows-2 {
+    @media (width >= 48rem) {
+      grid-template-rows: repeat(2, minmax(0, 1fr));
     }
   }
   .md\:p-10 {
